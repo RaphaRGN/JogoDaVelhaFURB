@@ -45,7 +45,6 @@ public class JogoDaVelha {
                 continuarJogo = false;
             }
         }
-
     }
 
     public static void main(String[] args) {
@@ -58,5 +57,4 @@ public class JogoDaVelha {
         jogoDaVelha.jogar(teclado);
 
     }
-
 }

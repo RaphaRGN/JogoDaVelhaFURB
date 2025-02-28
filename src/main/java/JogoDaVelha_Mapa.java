@@ -9,13 +9,16 @@ public class JogoDaVelha_Mapa {
         Random random = new Random();
 
 
-        return random.nextInt(3);
+        return random.nextInt(fim - inicio + 1) + inicio;
     }
 
     public void limpaMapa() {
 
-        mapa = new char[3][3];
-
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                mapa[i][j] = ' ';
+            }
+        }
     }
 
     public void desenha(int jogada) {
@@ -81,5 +84,4 @@ public class JogoDaVelha_Mapa {
 
         return false;
     }
-
 }

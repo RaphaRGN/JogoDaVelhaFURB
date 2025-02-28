@@ -35,10 +35,8 @@ public class JogoDaVelha_PC {
                                 }
                                 return true;
                         }
-
                 }
                 return true;
         }
-
 }
 
