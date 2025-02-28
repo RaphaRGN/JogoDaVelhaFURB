@@ -7,9 +7,9 @@ public class JogoDaVelha_Mapa {
 
     public int sortear(int inicio, int fim) {
         Random random = new Random();
-        int numeroAleatorioMaquina = random.nextInt(inicio, fim);
 
-        return numeroAleatorioMaquina;
+
+        return random.nextInt(3);
     }
 
     public void limpaMapa() {
@@ -45,7 +45,6 @@ public class JogoDaVelha_Mapa {
     public boolean jogar(int l, int c, char jogador) {
 
         if (mapa[l][c] == 'X' || mapa[l][c] == 'O') {
-            System.out.println("Escolha outro local !");
 
             return false;
         } else {
@@ -57,17 +56,30 @@ public class JogoDaVelha_Mapa {
 
     public boolean ganhou(char jogador) {
 
-        if (jogador == 'c') {
+        for (int i = 0; i < 3; i++) {
+            if (mapa[i][0] == jogador && mapa[i][1] == jogador && mapa[i][2] == jogador) {
+                return true;
+            }
 
-            System.out.println("Computador ganhou !");
+        }
+
+        for (int i = 0; i < 3; i++) {
+            if (mapa[0][i] == jogador && mapa[1][i] == jogador && mapa[2][i] == jogador) {
+                return true;
+
+            }
+
+        }
+
+        if (mapa[0][0] == jogador && mapa[1][1] == jogador && mapa[2][2] == jogador) {
             return true;
         }
 
-        if (jogador == 'X') {
-
-            System.out.println("Você ganhou !");
+        if (mapa[0][2] == jogador && mapa[1][1] == jogador && mapa[2][0] == jogador) {
             return true;
         }
+
         return false;
     }
+
 }

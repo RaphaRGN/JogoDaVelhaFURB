@@ -25,13 +25,18 @@ public class JogoDaVelha_Jogador {
         if(!mapa.jogar(linhaJogo, colunaJogo, letra)){
 
             System.out.println("Espaço ocupado !");
+            joga(teclado);
 
             return false;
         }
         else{
+            if(mapa.ganhou('X')){
 
+                System.out.println("JOGADOR GANHOU !");
+
+            }
             return true;
         }
+
     }
 }
-
